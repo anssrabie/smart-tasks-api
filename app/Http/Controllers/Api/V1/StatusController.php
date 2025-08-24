@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Constants\CacheKeys;
 use App\Http\Controllers\Controller;
 use App\Models\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class StatusController extends Controller
 {
@@ -13,7 +15,10 @@ class StatusController extends Controller
      */
     public function __invoke()
     {
-        return $this->returnData(Status::get(),'Statuses');
+        $statuses = Cache::rememberForever(CacheKeys::STATUSES, function () {
+            return Status::get();
+        });
+        return $this->returnData($statuses, 'Statuses');
     }
 
 }

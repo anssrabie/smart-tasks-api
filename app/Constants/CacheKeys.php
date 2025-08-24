@@ -4,6 +4,7 @@ namespace App\Constants;
 
 class CacheKeys
 {
+    public const STATUSES = 'statuses';
     public const TASKS_INDEX = 'tasks_index';
     public const TASK = 'task_:id';
 
