@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\laragon\www\smart-tasks-api\app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">C:\laragon\www\smart-tasks-api\app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/MakeInterfaceCommand.php.html#9">App\Console\Commands\MakeInterfaceCommand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/MakeRepositoryCommand.php.html#8">App\Console\Commands\MakeRepositoryCommand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/MakeServiceCommand.php.html#8">App\Console\Commands\MakeServiceCommand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/AuthController.php.html#11">App\Http\Controllers\Api\V1\AuthController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/StatusController.php.html#9">App\Http\Controllers\Api\V1\StatusController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/BaseFormApiRequest.php.html#10">App\Http\Requests\Api\BaseFormApiRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/AuthRequest.php.html#7">App\Http\Requests\Api\V1\AuthRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/AssignTaskRequest.php.html#7">App\Http\Requests\Api\V1\Tasks\AssignTaskRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/TaskRequest.php.html#8">App\Http\Requests\Api\V1\Tasks\TaskRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/UpdateTaskStatusRequest.php.html#7">App\Http\Requests\Api\V1\Tasks\UpdateTaskStatusRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#8">App\Repositories\AuthRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#7">App\Services\AuthService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/AuthControllerDocs.php.html#7">App\Swagger\Controllers\AuthControllerDocs</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/StatusControllerDocs.php.html#7">App\Swagger\Controllers\StatusControllerDocs</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#7">App\Swagger\Controllers\TaskControllerDocs</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Schemas/PaginationSchemas.php.html#7">App\Swagger\Schemas\PaginationSchemas</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/TaskController.php.html#13">App\Http\Controllers\Api\V1\TaskController</a></td><td class="text-right">44%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#13">App\Repositories\BaseRepository</a></td><td class="text-right">46%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#11">App\Services\BaseService</a></td><td class="text-right">61%</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#8">App\Traits\ApiResponse</a></td><td class="text-right">63%</td></tr>
+       <tr><td><a href="Http/Middleware/ApiKeyMiddleware.php.html#10">App\Http\Middleware\ApiKeyMiddleware</a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Repositories/BaseRepository.php.html#13">App\Repositories\BaseRepository</a></td><td class="text-right">241</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#11">App\Services\BaseService</a></td><td class="text-right">40</td></tr>
+       <tr><td><a href="Console/Commands/MakeInterfaceCommand.php.html#9">App\Console\Commands\MakeInterfaceCommand</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Console/Commands/MakeRepositoryCommand.php.html#8">App\Console\Commands\MakeRepositoryCommand</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Console/Commands/MakeServiceCommand.php.html#8">App\Console\Commands\MakeServiceCommand</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/AuthController.php.html#11">App\Http\Controllers\Api\V1\AuthController</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/TaskRequest.php.html#8">App\Http\Requests\Api\V1\Tasks\TaskRequest</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#7">App\Services\AuthService</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Middleware/ApiKeyMiddleware.php.html#10">App\Http\Middleware\ApiKeyMiddleware</a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/MakeInterfaceCommand.php.html#28"><abbr title="App\Console\Commands\MakeInterfaceCommand::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/MakeRepositoryCommand.php.html#27"><abbr title="App\Console\Commands\MakeRepositoryCommand::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/MakeServiceCommand.php.html#27"><abbr title="App\Console\Commands\MakeServiceCommand::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/AuthController.php.html#13"><abbr title="App\Http\Controllers\Api\V1\AuthController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/AuthController.php.html#21"><abbr title="App\Http\Controllers\Api\V1\AuthController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/AuthController.php.html#36"><abbr title="App\Http\Controllers\Api\V1\AuthController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/StatusController.php.html#14"><abbr title="App\Http\Controllers\Api\V1\StatusController::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/TaskController.php.html#29"><abbr title="App\Http\Controllers\Api\V1\TaskController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/TaskController.php.html#47"><abbr title="App\Http\Controllers\Api\V1\TaskController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/TaskController.php.html#56"><abbr title="App\Http\Controllers\Api\V1\TaskController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/TaskController.php.html#65"><abbr title="App\Http\Controllers\Api\V1\TaskController::assign">assign</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/TaskController.php.html#74"><abbr title="App\Http\Controllers\Api\V1\TaskController::updateStatus">updateStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/BaseFormApiRequest.php.html#14"><abbr title="App\Http\Requests\Api\BaseFormApiRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/AuthRequest.php.html#12"><abbr title="App\Http\Requests\Api\V1\AuthRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/AuthRequest.php.html#22"><abbr title="App\Http\Requests\Api\V1\AuthRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/AssignTaskRequest.php.html#12"><abbr title="App\Http\Requests\Api\V1\Tasks\AssignTaskRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/AssignTaskRequest.php.html#22"><abbr title="App\Http\Requests\Api\V1\Tasks\AssignTaskRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/TaskRequest.php.html#13"><abbr title="App\Http\Requests\Api\V1\Tasks\TaskRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/TaskRequest.php.html#23"><abbr title="App\Http\Requests\Api\V1\Tasks\TaskRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/UpdateTaskStatusRequest.php.html#12"><abbr title="App\Http\Requests\Api\V1\Tasks\UpdateTaskStatusRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/UpdateTaskStatusRequest.php.html#22"><abbr title="App\Http\Requests\Api\V1\Tasks\UpdateTaskStatusRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#10"><abbr title="App\Repositories\AuthRepository::findByEmail">findByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#66"><abbr title="App\Repositories\BaseRepository::withCount">withCount</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#72"><abbr title="App\Repositories\BaseRepository::orderBy">orderBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#79"><abbr title="App\Repositories\BaseRepository::all">all</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#95"><abbr title="App\Repositories\BaseRepository::filter">filter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#101"><abbr title="App\Repositories\BaseRepository::sort">sort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#136"><abbr title="App\Repositories\BaseRepository::getBy">getBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#141"><abbr title="App\Repositories\BaseRepository::findBy">findBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#152"><abbr title="App\Repositories\BaseRepository::firstBy">firstBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#161"><abbr title="App\Repositories\BaseRepository::firstWhere">firstWhere</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#166"><abbr title="App\Repositories\BaseRepository::allWhere">allWhere</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#171"><abbr title="App\Repositories\BaseRepository::whereIn">whereIn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#176"><abbr title="App\Repositories\BaseRepository::whereNotIn">whereNotIn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#181"><abbr title="App\Repositories\BaseRepository::whereHas">whereHas</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#186"><abbr title="App\Repositories\BaseRepository::updateOrCreate">updateOrCreate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#191"><abbr title="App\Repositories\BaseRepository::firstOrCreate">firstOrCreate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#196"><abbr title="App\Repositories\BaseRepository::exists">exists</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#206"><abbr title="App\Repositories\BaseRepository::deleteBy">deleteBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#211"><abbr title="App\Repositories\BaseRepository::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#216"><abbr title="App\Repositories\BaseRepository::bulkInsert">bulkInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#9"><abbr title="App\Services\AuthService::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#20"><abbr title="App\Services\AuthService::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#60"><abbr title="App\Services\BaseService::getBy">getBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#65"><abbr title="App\Services\BaseService::findBy">findBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#69"><abbr title="App\Services\BaseService::first">first</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#73"><abbr title="App\Services\BaseService::firstBy">firstBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#77"><abbr title="App\Services\BaseService::whereHas">whereHas</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#82"><abbr title="App\Services\BaseService::firstOrCreate">firstOrCreate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/AuthControllerDocs.php.html#61"><abbr title="App\Swagger\Controllers\AuthControllerDocs::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/AuthControllerDocs.php.html#99"><abbr title="App\Swagger\Controllers\AuthControllerDocs::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/StatusControllerDocs.php.html#30"><abbr title="App\Swagger\Controllers\StatusControllerDocs::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#57"><abbr title="App\Swagger\Controllers\TaskControllerDocs::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#79"><abbr title="App\Swagger\Controllers\TaskControllerDocs::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#105"><abbr title="App\Swagger\Controllers\TaskControllerDocs::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#136"><abbr title="App\Swagger\Controllers\TaskControllerDocs::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#158"><abbr title="App\Swagger\Controllers\TaskControllerDocs::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#190"><abbr title="App\Swagger\Controllers\TaskControllerDocs::assign">assign</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Controllers/TaskControllerDocs.php.html#221"><abbr title="App\Swagger\Controllers\TaskControllerDocs::updateStatus">updateStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Swagger/Schemas/PaginationSchemas.php.html#41"><abbr title="App\Swagger\Schemas\PaginationSchemas::schema">schema</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#12"><abbr title="App\Traits\ApiResponse::getDefaultErrorCode">getDefaultErrorCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#55"><abbr title="App\Traits\ApiResponse::successMessage">successMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#67"><abbr title="App\Traits\ApiResponse::errorMessage">errorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#116"><abbr title="App\Repositories\BaseRepository::find">find</abbr></a></td><td class="text-right">25%</td></tr>
+       <tr><td><a href="Http/Middleware/ApiKeyMiddleware.php.html#18"><abbr title="App\Http\Middleware\ApiKeyMiddleware::handle">handle</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#18"><abbr title="App\Services\BaseService::getData">getData</abbr></a></td><td class="text-right">85%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/MakeInterfaceCommand.php.html#28"><abbr title="App\Console\Commands\MakeInterfaceCommand::handle">handle</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Console/Commands/MakeRepositoryCommand.php.html#27"><abbr title="App\Console\Commands\MakeRepositoryCommand::handle">handle</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Console/Commands/MakeServiceCommand.php.html#27"><abbr title="App\Console\Commands\MakeServiceCommand::handle">handle</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Requests/Api/V1/Tasks/TaskRequest.php.html#23"><abbr title="App\Http\Requests\Api\V1\Tasks\TaskRequest::rules">rules</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/AuthController.php.html#21"><abbr title="App\Http\Controllers\Api\V1\AuthController::login">login</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#141"><abbr title="App\Repositories\BaseRepository::findBy">findBy</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#152"><abbr title="App\Repositories\BaseRepository::firstBy">firstBy</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#9"><abbr title="App\Services\AuthService::login">login</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/BaseService.php.html#18"><abbr title="App\Services\BaseService::getData">getData</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#116"><abbr title="App\Repositories\BaseRepository::find">find</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Middleware/ApiKeyMiddleware.php.html#18"><abbr title="App\Http\Middleware\ApiKeyMiddleware::handle">handle</abbr></a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.2.7</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Sun Aug 24 21:49:28 UTC 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([16,0,0,0,0,2,0,2,1,0,0,15], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([63,0,0,1,0,0,0,0,1,1,1,34], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,4,"<a href=\"Console\/Commands\/MakeInterfaceCommand.php.html#9\">App\\Console\\Commands\\MakeInterfaceCommand<\/a>"],[0,4,"<a href=\"Console\/Commands\/MakeRepositoryCommand.php.html#8\">App\\Console\\Commands\\MakeRepositoryCommand<\/a>"],[0,4,"<a href=\"Console\/Commands\/MakeServiceCommand.php.html#8\">App\\Console\\Commands\\MakeServiceCommand<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#11\">App\\Http\\Controllers\\Api\\V1\\AuthController<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/StatusController.php.html#9\">App\\Http\\Controllers\\Api\\V1\\StatusController<\/a>"],[44.44444444444444,8,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#13\">App\\Http\\Controllers\\Api\\V1\\TaskController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#7\">App\\Http\\Controllers\\Controller<\/a>"],[75,3,"<a href=\"Http\/Middleware\/ApiKeyMiddleware.php.html#10\">App\\Http\\Middleware\\ApiKeyMiddleware<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/BaseFormApiRequest.php.html#10\">App\\Http\\Requests\\Api\\BaseFormApiRequest<\/a>"],[0,2,"<a href=\"Http\/Requests\/Api\/V1\/AuthRequest.php.html#7\">App\\Http\\Requests\\Api\\V1\\AuthRequest<\/a>"],[0,2,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/AssignTaskRequest.php.html#7\">App\\Http\\Requests\\Api\\V1\\Tasks\\AssignTaskRequest<\/a>"],[0,4,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/TaskRequest.php.html#8\">App\\Http\\Requests\\Api\\V1\\Tasks\\TaskRequest<\/a>"],[0,2,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/UpdateTaskStatusRequest.php.html#7\">App\\Http\\Requests\\Api\\V1\\Tasks\\UpdateTaskStatusRequest<\/a>"],[100,1,"<a href=\"Http\/Resources\/V1\/ActivityResource.php.html#8\">App\\Http\\Resources\\V1\\ActivityResource<\/a>"],[100,1,"<a href=\"Http\/Resources\/V1\/TaskResource.php.html#8\">App\\Http\\Resources\\V1\\TaskResource<\/a>"],[100,1,"<a href=\"Http\/Resources\/V1\/UserResource.php.html#8\">App\\Http\\Resources\\V1\\UserResource<\/a>"],[100,0,"<a href=\"Models\/Status.php.html#8\">App\\Models\\Status<\/a>"],[100,10,"<a href=\"Models\/Task.php.html#13\">App\\Models\\Task<\/a>"],[100,1,"<a href=\"Models\/User.php.html#12\">App\\Models\\User<\/a>"],[100,2,"<a href=\"Providers\/AppServiceProvider.php.html#9\">App\\Providers\\AppServiceProvider<\/a>"],[0,1,"<a href=\"Repositories\/AuthRepository.php.html#8\">App\\Repositories\\AuthRepository<\/a>"],[46.96969696969697,37,"<a href=\"Repositories\/BaseRepository.php.html#13\">App\\Repositories\\BaseRepository<\/a>"],[100,1,"<a href=\"Repositories\/TaskRepository.php.html#9\">App\\Repositories\\TaskRepository<\/a>"],[0,3,"<a href=\"Services\/AuthService.php.html#7\">App\\Services\\AuthService<\/a>"],[61.111111111111114,19,"<a href=\"Services\/BaseService.php.html#11\">App\\Services\\BaseService<\/a>"],[100,4,"<a href=\"Services\/TaskService.php.html#9\">App\\Services\\TaskService<\/a>"],[0,2,"<a href=\"Swagger\/Controllers\/AuthControllerDocs.php.html#7\">App\\Swagger\\Controllers\\AuthControllerDocs<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/StatusControllerDocs.php.html#7\">App\\Swagger\\Controllers\\StatusControllerDocs<\/a>"],[0,7,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#7\">App\\Swagger\\Controllers\\TaskControllerDocs<\/a>"],[100,0,"<a href=\"Swagger\/Schemas\/ActivitySchema.php.html#22\">App\\Swagger\\Schemas\\ActivitySchema<\/a>"],[0,1,"<a href=\"Swagger\/Schemas\/PaginationSchemas.php.html#7\">App\\Swagger\\Schemas\\PaginationSchemas<\/a>"],[100,0,"<a href=\"Swagger\/Schemas\/TaskRequestSchema.php.html#18\">App\\Swagger\\Schemas\\TaskRequestSchema<\/a>"],[100,0,"<a href=\"Swagger\/Schemas\/TaskSchema.php.html#48\">App\\Swagger\\Schemas\\TaskSchema<\/a>"],[100,0,"<a href=\"Swagger\/Schemas\/UserSchema.php.html#19\">App\\Swagger\\Schemas\\UserSchema<\/a>"],[100,0,"<a href=\"Swagger\/Swagger.php.html#21\">App\\Swagger\\Swagger<\/a>"],[63.63636363636363,5,"<a href=\"Traits\/ApiResponse.php.html#8\">App\\Traits\\ApiResponse<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,4,"<a href=\"Console\/Commands\/MakeInterfaceCommand.php.html#28\">App\\Console\\Commands\\MakeInterfaceCommand::handle<\/a>"],[0,4,"<a href=\"Console\/Commands\/MakeRepositoryCommand.php.html#27\">App\\Console\\Commands\\MakeRepositoryCommand::handle<\/a>"],[0,4,"<a href=\"Console\/Commands\/MakeServiceCommand.php.html#27\">App\\Console\\Commands\\MakeServiceCommand::handle<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#13\">App\\Http\\Controllers\\Api\\V1\\AuthController::__construct<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#21\">App\\Http\\Controllers\\Api\\V1\\AuthController::login<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#36\">App\\Http\\Controllers\\Api\\V1\\AuthController::logout<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/StatusController.php.html#14\">App\\Http\\Controllers\\Api\\V1\\StatusController::__invoke<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#15\">App\\Http\\Controllers\\Api\\V1\\TaskController::__construct<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#17\">App\\Http\\Controllers\\Api\\V1\\TaskController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#29\">App\\Http\\Controllers\\Api\\V1\\TaskController::store<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#38\">App\\Http\\Controllers\\Api\\V1\\TaskController::show<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#47\">App\\Http\\Controllers\\Api\\V1\\TaskController::update<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#56\">App\\Http\\Controllers\\Api\\V1\\TaskController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#65\">App\\Http\\Controllers\\Api\\V1\\TaskController::assign<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/TaskController.php.html#74\">App\\Http\\Controllers\\Api\\V1\\TaskController::updateStatus<\/a>"],[75,3,"<a href=\"Http\/Middleware\/ApiKeyMiddleware.php.html#18\">App\\Http\\Middleware\\ApiKeyMiddleware::handle<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/BaseFormApiRequest.php.html#14\">App\\Http\\Requests\\Api\\BaseFormApiRequest::failedValidation<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/AuthRequest.php.html#12\">App\\Http\\Requests\\Api\\V1\\AuthRequest::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/AuthRequest.php.html#22\">App\\Http\\Requests\\Api\\V1\\AuthRequest::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/AssignTaskRequest.php.html#12\">App\\Http\\Requests\\Api\\V1\\Tasks\\AssignTaskRequest::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/AssignTaskRequest.php.html#22\">App\\Http\\Requests\\Api\\V1\\Tasks\\AssignTaskRequest::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/TaskRequest.php.html#13\">App\\Http\\Requests\\Api\\V1\\Tasks\\TaskRequest::authorize<\/a>"],[0,3,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/TaskRequest.php.html#23\">App\\Http\\Requests\\Api\\V1\\Tasks\\TaskRequest::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/UpdateTaskStatusRequest.php.html#12\">App\\Http\\Requests\\Api\\V1\\Tasks\\UpdateTaskStatusRequest::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/Api\/V1\/Tasks\/UpdateTaskStatusRequest.php.html#22\">App\\Http\\Requests\\Api\\V1\\Tasks\\UpdateTaskStatusRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Resources\/V1\/ActivityResource.php.html#15\">App\\Http\\Resources\\V1\\ActivityResource::toArray<\/a>"],[100,1,"<a href=\"Http\/Resources\/V1\/TaskResource.php.html#15\">App\\Http\\Resources\\V1\\TaskResource::toArray<\/a>"],[100,1,"<a href=\"Http\/Resources\/V1\/UserResource.php.html#15\">App\\Http\\Resources\\V1\\UserResource::toArray<\/a>"],[100,1,"<a href=\"Models\/Task.php.html#19\">App\\Models\\Task::getActivitylogOptions<\/a>"],[100,5,"<a href=\"Models\/Task.php.html#27\">App\\Models\\Task::getDescriptionForEvent<\/a>"],[100,1,"<a href=\"Models\/Task.php.html#52\">App\\Models\\Task::booted<\/a>"],[100,1,"<a href=\"Models\/Task.php.html#70\">App\\Models\\Task::status<\/a>"],[100,1,"<a href=\"Models\/Task.php.html#75\">App\\Models\\Task::assignedTo<\/a>"],[100,1,"<a href=\"Models\/Task.php.html#80\">App\\Models\\Task::owner<\/a>"],[100,1,"<a href=\"Models\/User.php.html#43\">App\\Models\\User::casts<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#14\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#22\">App\\Providers\\AppServiceProvider::boot<\/a>"],[0,1,"<a href=\"Repositories\/AuthRepository.php.html#10\">App\\Repositories\\AuthRepository::findByEmail<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#26\">App\\Repositories\\BaseRepository::__construct<\/a>"],[91.66666666666666,4,"<a href=\"Repositories\/BaseRepository.php.html#31\">App\\Repositories\\BaseRepository::query<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#54\">App\\Repositories\\BaseRepository::withRelations<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#60\">App\\Repositories\\BaseRepository::withScopes<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#66\">App\\Repositories\\BaseRepository::withCount<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#72\">App\\Repositories\\BaseRepository::orderBy<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#79\">App\\Repositories\\BaseRepository::all<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#84\">App\\Repositories\\BaseRepository::select<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#90\">App\\Repositories\\BaseRepository::paginate<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#95\">App\\Repositories\\BaseRepository::filter<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#101\">App\\Repositories\\BaseRepository::sort<\/a>"],[100,2,"<a href=\"Repositories\/BaseRepository.php.html#107\">App\\Repositories\\BaseRepository::create<\/a>"],[25,2,"<a href=\"Repositories\/BaseRepository.php.html#116\">App\\Repositories\\BaseRepository::find<\/a>"],[100,2,"<a href=\"Repositories\/BaseRepository.php.html#126\">App\\Repositories\\BaseRepository::update<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#136\">App\\Repositories\\BaseRepository::getBy<\/a>"],[0,2,"<a href=\"Repositories\/BaseRepository.php.html#141\">App\\Repositories\\BaseRepository::findBy<\/a>"],[0,2,"<a href=\"Repositories\/BaseRepository.php.html#152\">App\\Repositories\\BaseRepository::firstBy<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#161\">App\\Repositories\\BaseRepository::firstWhere<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#166\">App\\Repositories\\BaseRepository::allWhere<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#171\">App\\Repositories\\BaseRepository::whereIn<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#176\">App\\Repositories\\BaseRepository::whereNotIn<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#181\">App\\Repositories\\BaseRepository::whereHas<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#186\">App\\Repositories\\BaseRepository::updateOrCreate<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#191\">App\\Repositories\\BaseRepository::firstOrCreate<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#196\">App\\Repositories\\BaseRepository::exists<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#201\">App\\Repositories\\BaseRepository::delete<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#206\">App\\Repositories\\BaseRepository::deleteBy<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#211\">App\\Repositories\\BaseRepository::destroy<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#216\">App\\Repositories\\BaseRepository::bulkInsert<\/a>"],[100,1,"<a href=\"Repositories\/TaskRepository.php.html#14\">App\\Repositories\\TaskRepository::__construct<\/a>"],[0,2,"<a href=\"Services\/AuthService.php.html#9\">App\\Services\\AuthService::login<\/a>"],[0,1,"<a href=\"Services\/AuthService.php.html#20\">App\\Services\\AuthService::logout<\/a>"],[100,1,"<a href=\"Services\/BaseService.php.html#14\">App\\Services\\BaseService::__construct<\/a>"],[85.71428571428571,5,"<a href=\"Services\/BaseService.php.html#18\">App\\Services\\BaseService::getData<\/a>"],[100,2,"<a href=\"Services\/BaseService.php.html#40\">App\\Services\\BaseService::storeResource<\/a>"],[100,2,"<a href=\"Services\/BaseService.php.html#45\">App\\Services\\BaseService::showResource<\/a>"],[100,2,"<a href=\"Services\/BaseService.php.html#50\">App\\Services\\BaseService::updateResource<\/a>"],[100,1,"<a href=\"Services\/BaseService.php.html#55\">App\\Services\\BaseService::deleteResource<\/a>"],[0,1,"<a href=\"Services\/BaseService.php.html#60\">App\\Services\\BaseService::getBy<\/a>"],[0,1,"<a href=\"Services\/BaseService.php.html#65\">App\\Services\\BaseService::findBy<\/a>"],[0,1,"<a href=\"Services\/BaseService.php.html#69\">App\\Services\\BaseService::first<\/a>"],[0,1,"<a href=\"Services\/BaseService.php.html#73\">App\\Services\\BaseService::firstBy<\/a>"],[0,1,"<a href=\"Services\/BaseService.php.html#77\">App\\Services\\BaseService::whereHas<\/a>"],[0,1,"<a href=\"Services\/BaseService.php.html#82\">App\\Services\\BaseService::firstOrCreate<\/a>"],[100,1,"<a href=\"Services\/TaskService.php.html#12\">App\\Services\\TaskService::__construct<\/a>"],[100,2,"<a href=\"Services\/TaskService.php.html#17\">App\\Services\\TaskService::storeResource<\/a>"],[100,1,"<a href=\"Services\/TaskService.php.html#25\">App\\Services\\TaskService::showResource<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/AuthControllerDocs.php.html#61\">App\\Swagger\\Controllers\\AuthControllerDocs::login<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/AuthControllerDocs.php.html#99\">App\\Swagger\\Controllers\\AuthControllerDocs::logout<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/StatusControllerDocs.php.html#30\">App\\Swagger\\Controllers\\StatusControllerDocs::index<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#57\">App\\Swagger\\Controllers\\TaskControllerDocs::index<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#79\">App\\Swagger\\Controllers\\TaskControllerDocs::store<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#105\">App\\Swagger\\Controllers\\TaskControllerDocs::show<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#136\">App\\Swagger\\Controllers\\TaskControllerDocs::update<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#158\">App\\Swagger\\Controllers\\TaskControllerDocs::destroy<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#190\">App\\Swagger\\Controllers\\TaskControllerDocs::assign<\/a>"],[0,1,"<a href=\"Swagger\/Controllers\/TaskControllerDocs.php.html#221\">App\\Swagger\\Controllers\\TaskControllerDocs::updateStatus<\/a>"],[0,1,"<a href=\"Swagger\/Schemas\/PaginationSchemas.php.html#41\">App\\Swagger\\Schemas\\PaginationSchemas::schema<\/a>"],[0,1,"<a href=\"Traits\/ApiResponse.php.html#12\">App\\Traits\\ApiResponse::getDefaultErrorCode<\/a>"],[100,1,"<a href=\"Traits\/ApiResponse.php.html#25\">App\\Traits\\ApiResponse::formatResponse<\/a>"],[100,1,"<a href=\"Traits\/ApiResponse.php.html#43\">App\\Traits\\ApiResponse::returnData<\/a>"],[0,1,"<a href=\"Traits\/ApiResponse.php.html#55\">App\\Traits\\ApiResponse::successMessage<\/a>"],[0,1,"<a href=\"Traits\/ApiResponse.php.html#67\">App\\Traits\\ApiResponse::errorMessage<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
