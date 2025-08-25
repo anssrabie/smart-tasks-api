@@ -1,74 +1,82 @@
-# Smart Tasks API
+# Smart-Tasks API
 
 ## Objective
-The goal of this project is to build a **Laravel 12-based API** for managing tasks while ensuring clean code principles, security, and extensibility. The system allows assigning, tracking, and updating tasks efficiently.
+This project is a **Laravel-based RESTful API** for managing tasks in a team environment. It provides a secure, scalable, and well-structured API for task creation, assignment, tracking, and status management while following clean code principles, caching, validation, and authenticated access.
 
 ---
 
-## Features
+## ✅ Features
 
-### ✅ Task Management:
-- **Create Task**: Accepts task details including title, description, status, owner, and assigned user.
-- **Update Task**: Modify existing task details.
-- **Delete Task**: Remove a task.
-- **View Tasks**: Retrieve all tasks or filter by status (`pending`, `in_progress`, `completed`).
+### 📝 Task Management:
+- **Task CRUD**:
+    - Create, read, update, and delete tasks.
+    - Tasks include `title`, `description`, `status`, `owner_id`,`assigned_to` and `status`.
+    - Supports **soft deletes** and **timestamps**.
+- **Task Assignment & Status Updates**:
+    - Assign tasks to users.
+    - Update task status (`pending`, `in_progress`, `completed`, etc.).
+    - Tasks can have audit trails for status changes.
 
-### ✅ Activity Logging:
-- Tracks changes to **status** and **assigned_to** fields.
-- Uses **Spatie Activitylog** package.
-- Logs the user who performed the action or defaults to `System`.
+### 🔍 Searching, Filtering & Pagination:
+- Filter by `status_id`, `assigned_to`, `title`, or `owner_id`.
+- Sort tasks by `id`, `title`, `updated_at`, or `created_at`.
+- Supports **cursor and offset pagination**.
 
-### ✅ Business Rules:
-- `owner_id` is automatically set to the authenticated user when creating a task.
-- Tasks can optionally be assigned to another user (`assigned_to` can be `null`).
+### 🛡️ Security:
+- JWT-based authentication using **Laravel Sanctum**.
+- Middleware to protect API endpoints.
+- Input validation and sanitization for all requests.
+- Secure storage of secrets via `.env` file.
 
-### ✅ API Design:
-- Follows **RESTful principles**.
-- Uses appropriate **HTTP methods & status codes**.
-- Provides **pagination** for list endpoints.
+### ⚡ Performance Optimization:
+- Uses **eager loading** to prevent N+1 queries.
+- Frequently accessed data is cached using Laravel cache.
+- Optimized database queries with proper indexing.
 
-### ✅ Authentication & Security:
-- Uses **Sanctum authentication**.
-- Includes endpoints for **user registration & login**.
-
-### ✅ Validation & Error Handling:
-- Ensures **all API inputs are validated**.
-- Provides **meaningful error messages**.
-
-### ✅ Testing:
-- Unit and Feature tests for:
-    - Task creation
-    - Task updating
-    - Assignment changes
-    - Activity logging
-    - Authentication
+### 🧪 Testing:
+- **Unit tests** for models and services.
+- **Feature tests** for API endpoints.
+- Factories and mock data for consistent testing.
+- Test coverage report included.
 
 ---
 
-## Tech Stack
-- **Framework**: Laravel 12
-- **Database**: MySQL
-- **Authentication**: Sanctum
-- **Packages**:
-    - `darkaonline/l5-swagger`
-    - `spatie/laravel-activitylog`
-    - `spatie/laravel-query-builder`
-    - `laravel/tinker`
+## 🗂️ API Endpoints
+
+| Method | Endpoint | Description                                |
+|--------|---------|--------------------------------------------|
+| POST   | `/api/v1/auth/register` | User registration                     |
+| POST   | `/api/v1/auth/login`    | User login                            |
+| POST   | `/api/v1/auth/logout`   | User logout                           |
+| GET    | `/api/v1/tasks`         | List tasks with filters & pagination |
+| GET    | `/api/v1/tasks/{id}`    | Get task details                      |
+| POST   | `/api/v1/tasks`         | Create a new task                     |
+| PUT    | `/api/v1/tasks/{id}`    | Update a task                         |
+| DELETE | `/api/v1/tasks/{id}`    | Soft delete a task                     |
+| PATCH  | `/api/v1/tasks/{id}/status` | Update task status                  |
+| PATCH  | `/api/v1/tasks/{id}/assign` | Assign task to a user               |
 
 ---
 
-## Setup Instructions
+## 🗃️ Tech Stack
 
-### Requirements
-- **PHP**: 8.2 or higher
-- **MySQL**: 8.0 or higher
-- **Composer**: 2.0 or higher
+- **Framework**: Laravel 12 (latest stable)
+- **Database**: MySQL 8 / PostgreSQL 15
+- **Authentication**: Laravel Sanctum (JWT)
+- **Design Pattern**: Repository-Service Pattern
+- **Caching**: Laravel Cache (Redis optional)
+- **Testing**: PHPUnit with factories & mocks
+- **Docker**: Optional setup for containerized development
+
+---
+
+## 🚀 Setup Instructions
 
 ### Installation
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/anssrabie/smart-tasks-api.git
+   git clone https://github.com/anssrabie/smart-tasks-api
    ```
 
 2. **Navigate into the project folder**:
@@ -102,81 +110,54 @@ The goal of this project is to build a **Laravel 12-based API** for managing tas
    ```bash
    php artisan serve
    ```
+--------------------
+
+
+### Installation with Docker
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/anssrabie/smart-tasks-api
+
+2. **Navigate to the project folder**:
+   ```bash
+   cd api-workflow
+
+3. **Build the Docker containers: If you don't have Docker installed, download and install it from [here](https://www.docker.com/)**:
+   ```bash
+   docker-compose up --build
+
+4. **Access the application: The application will now be running at (http://localhost:8000). You can access it through the browser**:
 
 ---
+## API Documentation
 
-## API Documentation (Swagger)
+You can access the API documentation using either of the following:
 
-You can access the **Swagger API documentation** for this project using the following link:
+- **Postman**: [Postman API Documentation](https://documenter.getpostman.com/view/47844787/2sB3HetNeQ)
+- **Swagger**: The Swagger documentation is generated using **L5-Swagger**.
 
-[Swagger Documentation](#)
-
-## Activity Logging
-
-Uses **Spatie Activitylog**.
-
-Tracks:
-
-- `status` changes
-- `assigned_to` changes
-
-Logs the user performing the action or defaults to **System**.
-## API Documentation (Postman)
-
-You can access the **Postman API documentation** for this project using the following link:
-
-[Postman API Documentation](https://documenter.getpostman.com/view/43547209/2sB2cPjkTu)
+### To generate and view Swagger docs locally:
+1. Run the command to generate Swagger JSON:
+```bash
+php artisan l5-swagger:generate
+ ```
+2. Go to:
+```bash
+http://127.0.0.1:8000/api/documentation
+ ```
+--------------------
 
 ---
+## 🧪 Test Results & Coverage
 
+This project includes **unit and feature tests** using PHPUnit.  
 
-## Adding a New Payment Gateway
-
-This project uses the **Strategy Pattern** for payment gateways, allowing easy integration of new payment methods.
-
-### Steps to Add a New Payment Gateway:
-1. **Create a New Payment Gateway Class**:
-    - Inside `App\Services\Payments\Gateways`, create a new gateway class implementing `PaymentGatewayInterface`.
-
-2. **Implement the Payment Logic**:
-   ```php
-   namespace App\Services\Payments\Gateways;
-
-   class StripeGateway implements PaymentGatewayInterface
-   {
-       public function processPayment(float $amount): array
-       {
-           return [
-            'status' => PaymentStatus::Pending->value,
-            'payment_id' => 'stripe_' . uniqid(),
-            'message' => 'Payment processed via Stripe',
-            'method' => PaymentMethod::CreditCard->value,
-           ];
-       }
-   }
-   ```
-
-3. **Register the New Gateway**:
-    - Modify `PaymentGatewayFactory` to support the new gateway.
-   ```php
-   $gateway = match ($method) {
-       'credit_card' => new CreditCardGateway(),
-       'paypal' => new PayPalGateway(),
-       'stripe' => new StripeGateway(), // New gateway
-   };
-   ```
-
----
-
-## Testing
-
-To run unit and feature tests, execute:
+### Run tests:
 ```bash
 php artisan test
-```
+ ```
 
----
-
-## Conclusion
-This API is designed to be **secure, extensible, and easy to maintain**. By leveraging **design patterns**, clean coding practices, and robust authentication, it ensures smooth order and payment management.
-
+### Run tests with coverage report:
+```bash
+php artisan test --coverage
+ ```

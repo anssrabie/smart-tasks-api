@@ -1,0 +1,1630 @@
+{
+	"info": {
+		"_postman_id": "71e18e86-8238-49f5-8ceb-9d9197f3e620",
+		"name": "Smart Tasks API",
+		"description": "API documentation for Smart Tasks project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47844787",
+		"_collection_link": "https://galactic-flare-979752.postman.co/workspace/Team-Workspace~2fbf2f11-4c9a-4149-81c3-cfd6d254e4cd/collection/47844787-71e18e86-8238-49f5-8ceb-9d9197f3e620?action=share&source=collection_link&creator=47844787"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "V1",
+					"item": [
+						{
+							"name": "Auth",
+							"item": [
+								{
+									"name": "Login",
+									"item": [
+										{
+											"name": "Login user",
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": [
+														{
+															"key": "key",
+															"value": "x-api-key",
+															"type": "string"
+														},
+														{
+															"key": "value",
+															"value": "{{apiKey}}",
+															"type": "string"
+														},
+														{
+															"key": "in",
+															"value": "header",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"login"
+													]
+												},
+												"description": "Authenticate user and return access token"
+											},
+											"response": [
+												{
+													"name": "Successful login",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "x-api-key",
+																"value": "<API Key>",
+																"description": "Added as a part of security scheme: apikey"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/login",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"login"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": true,\n  \"message\": \"Logged in successfully\",\n  \"code\": 200,\n  \"data\": {\n    \"token\": \"1|uQxUj0C8z1fYpABCD1234567890\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"user@example.com\"\n    }\n  }\n}"
+												},
+												{
+													"name": "Invalid credentials",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "x-api-key",
+																"value": "<API Key>",
+																"description": "Added as a part of security scheme: apikey"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/login",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"login"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": false,\n  \"message\": \"Invalid credentials\",\n  \"code\": 401\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Logout",
+									"item": [
+										{
+											"name": "Logout user",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{authToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/logout",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"logout"
+													]
+												},
+												"description": "Invalidate user token and logout"
+											},
+											"response": [
+												{
+													"name": "Successful logout",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/logout",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"logout"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": true,\n  \"message\": \"Logged out successfully\",\n  \"code\": 200\n}"
+												},
+												{
+													"name": "Unauthenticated",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/logout",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"logout"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": false,\n  \"message\": \"Unauthenticated\",\n  \"code\": 401\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Statues",
+							"item": [
+								{
+									"name": "Get all statuses",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{authToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/statuses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"statuses"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/statuses",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"statuses"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": 1,\n    \"status\": \"pending\",\n    \"value\": \"Pending\"\n  },\n  {\n    \"id\": 1,\n    \"status\": \"pending\",\n    \"value\": \"Pending\"\n  }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Tasks",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "assign",
+											"item": [
+												{
+													"name": "Assign task to a user",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{authToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"assigned_to\": 2\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id/assign",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id",
+																"assign"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "1627",
+																	"description": "(Required) Task ID"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Task assigned successfully",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"assigned_to\": 2\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/tasks/:id/assign",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"tasks",
+																		":id",
+																		"assign"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": 1,\n  \"title\": \"Title\",\n  \"description\": \"Long description of the task\",\n  \"status\": {\n    \"id\": 2,\n    \"name\": \"Pending\"\n  },\n  \"owner\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"assigned_to\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"logs\": [\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    },\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    }\n  ],\n  \"created_at\": \"24-Aug-2025 21:05\",\n  \"last_updated_at\": \"2 hours ago\"\n}"
+														},
+														{
+															"name": "Task not found",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"assigned_to\": 2\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/tasks/:id/assign",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"tasks",
+																		":id",
+																		"assign"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														},
+														{
+															"name": "Validation error",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"assigned_to\": 2\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/tasks/:id/assign",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"tasks",
+																		":id",
+																		"assign"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+															"code": 422,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "status",
+											"item": [
+												{
+													"name": "Update task status",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status_id\": 2\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "1627",
+																	"description": "(Required) Task ID"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Task status updated successfully",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"status_id\": 2\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/tasks/:id/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"tasks",
+																		":id",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": 1,\n  \"title\": \"Title\",\n  \"description\": \"Long description of the task\",\n  \"status\": {\n    \"id\": 2,\n    \"name\": \"Pending\"\n  },\n  \"owner\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"assigned_to\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"logs\": [\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    },\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    }\n  ],\n  \"created_at\": \"24-Aug-2025 21:05\",\n  \"last_updated_at\": \"2 hours ago\"\n}"
+														},
+														{
+															"name": "Task not found",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"status_id\": 2\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/tasks/:id/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"tasks",
+																		":id",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														},
+														{
+															"name": "Validation error",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"status_id\": 2\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/tasks/:id/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"tasks",
+																		":id",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+															"code": 422,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Get a single task by ID",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{authToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/tasks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"tasks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "1627",
+															"description": "(Required) Task ID"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Task retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 1,\n  \"title\": \"Title\",\n  \"description\": \"Long description of the task\",\n  \"status\": {\n    \"id\": 2,\n    \"name\": \"Pending\"\n  },\n  \"owner\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"assigned_to\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"logs\": [\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    },\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    }\n  ],\n  \"created_at\": \"24-Aug-2025 21:05\",\n  \"last_updated_at\": \"2 hours ago\"\n}"
+												},
+												{
+													"name": "Task not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete a task by ID",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{authToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/tasks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"tasks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "1627",
+															"description": "(Required) Task ID"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Task deleted successfully",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Task not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update an existing task",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{authToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/tasks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"tasks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "1627",
+															"description": "(Required) Task ID"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Task updated successfully",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 1,\n  \"title\": \"Title\",\n  \"description\": \"Long description of the task\",\n  \"status\": {\n    \"id\": 2,\n    \"name\": \"Pending\"\n  },\n  \"owner\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"assigned_to\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"logs\": [\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    },\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    }\n  ],\n  \"created_at\": \"24-Aug-2025 21:05\",\n  \"last_updated_at\": \"2 hours ago\"\n}"
+												},
+												{
+													"name": "Task not found",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Validation error",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+													"code": 422,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Get all tasks (paginated)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{authToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/tasks?filter[title]=string&filter[status_id]=1627&filter[owner_id]=1627&filter[assigned_to]=1627&sort=-id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"tasks"
+											],
+											"query": [
+												{
+													"key": "filter[title]",
+													"value": "string",
+													"description": "Filter tasks by title"
+												},
+												{
+													"key": "filter[status_id]",
+													"value": "1627",
+													"description": "Filter tasks by status id"
+												},
+												{
+													"key": "filter[owner_id]",
+													"value": "1627",
+													"description": "Filter tasks by owner id"
+												},
+												{
+													"key": "filter[assigned_to]",
+													"value": "1627",
+													"description": "Filter tasks by assigned user id"
+												},
+												{
+													"key": "sort",
+													"value": "-id",
+													"description": "Sort by field (prefix with - for descending). Allowed: id, title, created_at, updated_at"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/tasks?filter[title]=string&filter[status_id]=1627&filter[owner_id]=1627&filter[assigned_to]=1627&sort=-id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"tasks"
+													],
+													"query": [
+														{
+															"key": "filter[title]",
+															"value": "string",
+															"description": "Filter tasks by title"
+														},
+														{
+															"key": "filter[status_id]",
+															"value": "1627",
+															"description": "Filter tasks by status id"
+														},
+														{
+															"key": "filter[owner_id]",
+															"value": "1627",
+															"description": "Filter tasks by owner id"
+														},
+														{
+															"key": "filter[assigned_to]",
+															"value": "1627",
+															"description": "Filter tasks by assigned user id"
+														},
+														{
+															"key": "sort",
+															"value": "-id",
+															"description": "Sort by field (prefix with - for descending). Allowed: id, title, created_at, updated_at"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Tasks retrieved successfully\",\n  \"code\": 200,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"title\": \"Title\",\n      \"description\": \"Long description of the task\",\n      \"status\": {\n        \"id\": 2,\n        \"name\": \"Pending\"\n      },\n      \"owner\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"assigned_to\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"logs\": [\n        {\n          \"id\": 10,\n          \"event\": \"updated\",\n          \"description\": \"Task status changed from Pending to Completed\",\n          \"causer\": {\n            \"id\": 3,\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n          },\n          \"properties\": {\n            \"old\": {\n              \"status\": \"Pending\"\n            },\n            \"new\": {\n              \"status\": \"Completed\"\n            }\n          },\n          \"created_at\": \"24-Aug-2025 21:05\"\n        },\n        {\n          \"id\": 10,\n          \"event\": \"updated\",\n          \"description\": \"Task status changed from Pending to Completed\",\n          \"causer\": {\n            \"id\": 3,\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n          },\n          \"properties\": {\n            \"old\": {\n              \"status\": \"Pending\"\n            },\n            \"new\": {\n              \"status\": \"Completed\"\n            }\n          },\n          \"created_at\": \"24-Aug-2025 21:05\"\n        }\n      ],\n      \"created_at\": \"24-Aug-2025 21:05\",\n      \"last_updated_at\": \"2 hours ago\"\n    },\n    {\n      \"id\": 1,\n      \"title\": \"Title\",\n      \"description\": \"Long description of the task\",\n      \"status\": {\n        \"id\": 2,\n        \"name\": \"Pending\"\n      },\n      \"owner\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"assigned_to\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"logs\": [\n        {\n          \"id\": 10,\n          \"event\": \"updated\",\n          \"description\": \"Task status changed from Pending to Completed\",\n          \"causer\": {\n            \"id\": 3,\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n          },\n          \"properties\": {\n            \"old\": {\n              \"status\": \"Pending\"\n            },\n            \"new\": {\n              \"status\": \"Completed\"\n            }\n          },\n          \"created_at\": \"24-Aug-2025 21:05\"\n        },\n        {\n          \"id\": 10,\n          \"event\": \"updated\",\n          \"description\": \"Task status changed from Pending to Completed\",\n          \"causer\": {\n            \"id\": 3,\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n          },\n          \"properties\": {\n            \"old\": {\n              \"status\": \"Pending\"\n            },\n            \"new\": {\n              \"status\": \"Completed\"\n            }\n          },\n          \"created_at\": \"24-Aug-2025 21:05\"\n        }\n      ],\n      \"created_at\": \"24-Aug-2025 21:05\",\n      \"last_updated_at\": \"2 hours ago\"\n    }\n  ],\n  \"meta\": {\n    \"current_page\": 1,\n    \"from\": 1,\n    \"last_page\": 10,\n    \"per_page\": 15,\n    \"to\": 15,\n    \"total\": 150\n  },\n  \"links\": {\n    \"first\": \"http://your-app.test/api/v1/tasks?page=1\",\n    \"last\": \"http://your-app.test/api/v1/tasks?page=10\",\n    \"prev\": null,\n    \"next\": \"http://your-app.test/api/v1/tasks?page=2\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create a new task",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{authToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/tasks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"tasks"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Task created successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/tasks",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"tasks"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 1,\n  \"title\": \"Title\",\n  \"description\": \"Long description of the task\",\n  \"status\": {\n    \"id\": 2,\n    \"name\": \"Pending\"\n  },\n  \"owner\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"assigned_to\": {\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n  },\n  \"logs\": [\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    },\n    {\n      \"id\": 10,\n      \"event\": \"updated\",\n      \"description\": \"Task status changed from Pending to Completed\",\n      \"causer\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n      },\n      \"properties\": {\n        \"old\": {\n          \"status\": \"Pending\"\n        },\n        \"new\": {\n          \"status\": \"Completed\"\n        }\n      },\n      \"created_at\": \"24-Aug-2025 21:05\"\n    }\n  ],\n  \"created_at\": \"24-Aug-2025 21:05\",\n  \"last_updated_at\": \"2 hours ago\"\n}"
+										},
+										{
+											"name": "Validation error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"Task description\",\n  \"status_id\": 1,\n  \"assigned_to\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/tasks",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"tasks"
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.headers.add({\r",
+					"    key: \"x-api-key\",\r",
+					"    value: pm.collectionVariables.get(\"apiKey\")\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://smart-tasks-api.test"
+		},
+		{
+			"key": "apiKey",
+			"value": "Iw1uYg8tQHZR6Atexht1hpVpvmjosXcrMAzEuX4s"
+		},
+		{
+			"key": "authToken",
+			"value": "xLZ2rMp15mtekON69gFGBKveWcsPn7abjDyf4xjOd99c5065"
+		},
+		{
+			"key": "bearerToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
