@@ -17,28 +17,15 @@ class TaskRequest extends BaseFormApiRequest
 
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
-
-        if ($this->isMethod('patch') || $this->isMethod('put')) {
-            return [
-                'title'        => ['required','required','string','max:255'],
-                'description'  => ['required','nullable','string'],
-            ];
-        }
-
-        // Post
-        return [
-            'title'        => ['required','string','max:255'],
-            'description'  => ['required','string'],
-            'status_id'    => ['nullable','exists:statuses,id'],
-            'assigned_to'  => [
-                'nullable',
-                Rule::exists('users','id')->withoutTrashed(),
-            ],
+        // Common rules
+        return  [
+            'title'       => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
+            'status_id'   => ['nullable', 'exists:statuses,id'],
+            'assigned_to' => ['nullable', Rule::exists('users', 'id')->withoutTrashed()],
         ];
     }
 }

@@ -21,7 +21,6 @@ class AuthRequest extends FormRequest
      */
     public function rules(): array
     {
-        logger('test');
         return [
             'email' => 'required|email',
             'password' => 'required|string',
