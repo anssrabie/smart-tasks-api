@@ -39,22 +39,27 @@ This project is a **Laravel-based RESTful API** for managing tasks in a team env
 - Factories and mock data for consistent testing.
 - Test coverage report included.
 
+### 🚀 CI/CD:
+- Configured **Continuous Integration & Continuous Deployment (CI/CD)** pipelines.
+- Automated testing, linting, and deployment processes.
+- Ensures code quality and smooth production releases.
+
 ---
 
 ## 🗂️ API Endpoints
 
-| Method | Endpoint | Description                                |
-|--------|---------|--------------------------------------------|
-| POST   | `/api/v1/auth/register` | User registration                     |
-| POST   | `/api/v1/auth/login`    | User login                            |
-| POST   | `/api/v1/auth/logout`   | User logout                           |
-| GET    | `/api/v1/tasks`         | List tasks with filters & pagination |
-| GET    | `/api/v1/tasks/{id}`    | Get task details                      |
-| POST   | `/api/v1/tasks`         | Create a new task                     |
-| PUT    | `/api/v1/tasks/{id}`    | Update a task                         |
-| DELETE | `/api/v1/tasks/{id}`    | Soft delete a task                     |
-| PATCH  | `/api/v1/tasks/{id}/status` | Update task status                  |
-| PATCH  | `/api/v1/tasks/{id}/assign` | Assign task to a user               |
+| Method | Endpoint                    | Description                          |
+|--------|-----------------------------|--------------------------------------|
+| GET    | `/api/v1/statues`           | Get all statues                      |
+| POST   | `/api/v1/auth/login`        | User login                           |
+| POST   | `/api/v1/auth/logout`       | User logout                          |
+| GET    | `/api/v1/tasks`             | List tasks with filters & pagination |
+| GET    | `/api/v1/tasks/{id}`        | Get task details                     |
+| POST   | `/api/v1/tasks`             | Create a new task                    |
+| PUT    | `/api/v1/tasks/{id}`        | Update a task                        |
+| DELETE | `/api/v1/tasks/{id}`        | Soft delete a task                   |
+| PATCH  | `/api/v1/tasks/{id}/status` | Update task status                   |
+| PATCH  | `/api/v1/tasks/{id}/assign` | Assign task to a user                |
 
 ---
 
@@ -76,7 +81,7 @@ This project is a **Laravel-based RESTful API** for managing tasks in a team env
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/anssrabie/smart-tasks-api
+   git clone https://github.com/anssrabie/smart-tasks-api.git
    ```
 
 2. **Navigate into the project folder**:
@@ -116,11 +121,11 @@ This project is a **Laravel-based RESTful API** for managing tasks in a team env
 ### Installation with Docker
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/anssrabie/smart-tasks-api
+   git clone https://github.com/anssrabie/smart-tasks-api.git
 
 2. **Navigate to the project folder**:
    ```bash
-   cd api-workflow
+   cd smart-tasks-api
 
 3. **Build the Docker containers: If you don't have Docker installed, download and install it from [here](https://www.docker.com/)**:
    ```bash
@@ -143,7 +148,7 @@ php artisan l5-swagger:generate
  ```
 2. Go to:
 ```bash
-http://127.0.0.1:8000/api/documentation
+http://smart-tasks-api.test/api/documentation
  ```
 --------------------
 
