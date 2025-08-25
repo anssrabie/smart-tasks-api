@@ -18,11 +18,20 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $owner = User::inRandomOrder()->first() ?? User::factory()->create();
+        $status = Status::inRandomOrder()->first() ?? Status::factory()->create();
+
+        $assignedTo = null;
+        if ($this->faker->boolean()) {
+            $assignedTo = User::inRandomOrder()->where('id','!=',$owner->id)->first()?->id ?? User::factory()->create()->id;
+        }
+
         return [
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
-            'status_id' => Status::factory(),
-            'owner_id' => User::factory(),
+            'status_id' => $status->id,
+            'owner_id' =>$owner->id,
+            'assigned_to' => $assignedTo,
         ];
     }
 }
