@@ -841,7 +841,7 @@
         "securitySchemes": {
             "ApiKeyAuth": {
                 "type": "apiKey",
-                "description": "Enter your API key ( Iw1uYg8tQHZR6Atexht1hpVpvmjosXcrMAzEuX4s )",
+                "description": "Enter your API key : Iw1uYg8tQHZR6Atexht1hpVpvmjosXcrMAzEuX4s",
                 "name": "x-api-key",
                 "in": "header"
             },
